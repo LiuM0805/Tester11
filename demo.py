@@ -1,3 +1,5 @@
+from hogtest.HogTester11.Student import Student
+
 print(2 + 2)
 
 print('c:\\user\\liumiao')
@@ -5,10 +7,12 @@ print(r'c:\user\liumiao')
 
 print('Py' 'thon')
 
-x='abc'
+x = 'abc'
 print(f'c:\\user\\liumiao\\{x}')
-print("c:\\user\\liumiao\\{y}\\{x}".format(y=x,x=123))
+print("c:\\user\\liumiao\\{y}\\{x}".format(y=x, x=123))
 
 squares = [1, 4, 9, 16, 25]
 print(squares[1:3])
 
+
+Student()
