@@ -1,7 +1,6 @@
 from unit.div import div
 
 
-
 class Test_div_num():
     def test_div_int(self):
         assert div(10, 5) == 2
@@ -12,6 +11,7 @@ class Test_div_num():
         assert div(6.66, 3.3) == 2.018
 
     def test_div_except(self):
+        assert div(-6, -3) == -2
         assert div("a", "b") == 5
         assert div(10, "a") == 10
 
