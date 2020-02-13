@@ -5,7 +5,7 @@ class TestDemo(unittest.TestCase):
     def test_sum(self):
         x = 1 + 2
         print(x)
-        self.assertEqual(4, x)
+        self.assertEqual(3, x)
 
     def test_demo(self):
         self.assertTrue(False)
