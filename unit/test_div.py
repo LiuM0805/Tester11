@@ -19,6 +19,6 @@ def test_div_float():
 
 @pytest.mark.exception
 def test_div_exception():
-    assert div(-6, -3) == -2
-    assert div("a", "b") == 5
-    assert div(10, "a") == 10
+    assert div(-6, -3) == 2
+    assert div("a", "b") == 10
+    assert div(10, "a") == 4
