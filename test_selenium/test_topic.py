@@ -25,6 +25,6 @@ class Test_Testerhome:
         # self.driver.find_element(By.CSS_SELECTOR, '.topic-22235 .title > a').click()
         self.driver.find_element(By.CSS_SELECTOR, '.topic:nth-child(1) .title a').click()
 
-    def teardown(self):
+    def teardown_method(self):
         sleep(1)
         self.driver.quit()
