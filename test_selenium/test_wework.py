@@ -3,14 +3,13 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 
 class TestWeWork:
     def setup(self):
-        chromeoptions=Options()
-        chromeoptions.add_experimental_option("debuggerAddress","127.0.0.1:9222")
+        chromeoptions = Options()
+        chromeoptions.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
         self.driver = webdriver.Chrome(options=chromeoptions)
         self.driver.implicitly_wait(5)
 
