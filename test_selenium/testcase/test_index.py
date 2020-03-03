@@ -3,14 +3,13 @@ from test_selenium.page.index import Index
 
 class TestIndex:
     def setup(self):
-        self.index=Index()
+        self.index = Index()
 
     def test_register(self):
         self.index.goto_register().register("霍格沃兹测试学院")
 
-
     def test_login(self):
-        register_page=self.index.goto_login().goto_register().register("tester11")
+        register_page = self.index.goto_login().goto_register().register("tester11")
         print(register_page.get_error_message())
         assert "请选择所属行业" in "|".join(register_page.get_error_message())
 
