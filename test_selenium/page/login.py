@@ -4,6 +4,7 @@ from test_selenium.page.base_page import BasePage
 from test_selenium.page.register import Register
 
 
+# 这是登录页PO
 class Login(BasePage):
     def scan_qrcode(self):
         pass

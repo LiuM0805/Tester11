@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from test_selenium.page.base_page import BasePage
 
 
+# 这是注册页PO
 class Register(BasePage):
     def register(self, corpname):
         self._driver.find_element(By.ID, 'corp_name').send_keys(corpname)

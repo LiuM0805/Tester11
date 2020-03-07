@@ -1,6 +1,7 @@
 from test_selenium.page.index import Index
 
 
+# 测试主页
 class TestIndex:
     def setup(self):
         self.index = Index()

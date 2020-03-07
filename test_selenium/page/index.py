@@ -5,6 +5,7 @@ from test_selenium.page.login import Login
 from test_selenium.page.register import Register
 
 
+# 这是主页PO
 class Index(BasePage):
     _base_url = "https://work.weixin.qq.com/"
 
