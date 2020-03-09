@@ -1,10 +1,11 @@
+from test_selenium.page.base_page import BasePage
 from test_selenium.page.index import Index
 
 
 # 测试主页
-class TestIndex:
+class TestIndex():
     def setup(self):
-        self.index = Index()
+        self.index = Index(reuse=True)
 
     def test_register(self):
         self.index.goto_register().register("霍格沃兹测试学院")

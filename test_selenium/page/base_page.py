@@ -6,8 +6,9 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 # 这是专门存放driver的
 class BasePage:
-    _base_url=""
-    _driver=None
+    _base_url = ""
+    _driver = None
+
     def __init__(self, driver: WebDriver = None, reuse=False):
         if driver is None:
             if reuse is True:
@@ -24,11 +25,14 @@ class BasePage:
             # login和register使用这个
             self._driver = driver
 
-        if self._base_url!="":
+        if self._base_url != "":
             self._driver.get(self._base_url)
 
-    def find(self, locator):
-        return self._driver.find_element(*locator)
+    def find(self, by):
+        if isinstance(by, tuple):
+            return self._driver.find_element(*by)
+        else:
+            return self._driver.find_element(by)
 
     def close(self):
         sleep(3)
