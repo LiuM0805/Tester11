@@ -5,6 +5,9 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 
 # 这是专门存放driver的
+from selenium.webdriver.support.wait import WebDriverWait
+
+
 class BasePage:
     _base_url = ""
     _driver = None
@@ -28,11 +31,20 @@ class BasePage:
         if self._base_url != "":
             self._driver.get(self._base_url)
 
-    def find(self, by):
+    def find(self, by, locator=""):
         if isinstance(by, tuple):
             return self._driver.find_element(*by)
         else:
-            return self._driver.find_element(by)
+            return self._driver.find_element(by, locator)
+
+    def elements(self, by, locator=""):
+        if isinstance(by, tuple):
+            return self._driver.find_elements(*by)
+        else:
+            return self._driver.find_elements(by, locator)
+
+    def wait(self, timeout, method):
+        WebDriverWait(self._driver, timeout).until(method)
 
     def close(self):
         sleep(3)
