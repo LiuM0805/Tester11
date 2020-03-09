@@ -18,6 +18,13 @@ class Contact(BasePage):
         self.find(gender_locator).click()
         self.find(mobile_locator).send_keys("12345678901")
         self.find(save_locator).click()
+        return self
+
+    # 添加成员成功后的方法
+    def get_member(self):
+        #根据姓名元素，返回属性内的值，用来断言
+        contactlist=(By.CSS_SELECTOR, '#member_list tr:nth-child(2) td:nth-child(2)')
+        return self.find(contactlist).get_attribute("title")
 
     def search(self, name):
         pass
