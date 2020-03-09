@@ -1,4 +1,3 @@
-from test_selenium.page.base_page import BasePage
 from test_selenium.page.index import Index
 
 
