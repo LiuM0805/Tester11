@@ -9,7 +9,7 @@ class TestMain:
         self.main.goto_messagelist()
 
     def test_add_member(self):
-        self.main.goto_add_member().add_member()
+        self.main.goto_add_member().main_add_member()
         # assert 'aaa' in self.main.import_user().get_message()
 
     def test_import_user(self):

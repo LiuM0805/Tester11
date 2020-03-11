@@ -1,6 +1,7 @@
 from time import sleep
 
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.webdriver import WebDriver
 
 
@@ -45,6 +46,19 @@ class BasePage:
 
     def wait(self, timeout, method):
         WebDriverWait(self._driver, timeout).until(method)
+
+    def move_mouse(self, locator):
+        webdriver.ActionChains(self._driver).move_to_element(locator).perform()
+
+    def clear_input(self, locator):
+        input_element=self.find(locator)
+        try:
+            input_element.clear()
+        except Exception :
+            print("清空输入框失败")
+        else:
+            print("清空成功")
+
 
     def close(self):
         sleep(3)
