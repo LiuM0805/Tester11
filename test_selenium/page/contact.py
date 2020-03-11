@@ -81,7 +81,6 @@ class Contact(BasePage):
     def delete_member(self):
         user_locator = (By.CSS_SELECTOR, '#member_list tr:nth-child(2) .ww_checkbox')
         delete_locator = (By.CSS_SELECTOR, '.js_has_member div:nth-child(1) .js_delete')
-        sleep(2)
         ok_locator = (By.CSS_SELECTOR, '.ww_dialog_foot .ww_btn_Blue')
         self.find(user_locator).click()
         self.find(delete_locator).click()
