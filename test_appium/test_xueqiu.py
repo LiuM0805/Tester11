@@ -6,6 +6,9 @@ from time import sleep
 from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.common.touch_action import TouchAction
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class TestXueqiu:
@@ -16,10 +19,13 @@ class TestXueqiu:
         caps["appPackage"] = "com.xueqiu.android"
         caps["appActivity"] = ".view.WelcomeActivityAlias"
         caps["noReset"] = True  # 是否清理数据
-        caps["dontStopAppOnReset"] = True  # 不杀app进程
-        caps["unicodeKeyBoard"] = True  # 输入中文
-        caps["resetKeyBoard"] = True  # 恢复输入法
-        caps["autoGrantPermissions"] = True  # 取消弹窗提示
+        # caps["dontStopAppOnReset"] = True  # 不杀app进程
+        # caps["unicodeKeyBoard"] = True  # 输入中文
+        # caps["resetKeyBoard"] = True  # 恢复输入法
+        # caps["autoGrantPermissions"] = True  # 忽略权限，但还是有权限访问，比如相机权限，不能和清理数据一起使用
+        # caps["skipServerInstallation"] = True  # 跳过uiautomator2 server的安装
+        # caps["chromedriverExecutableDir"] = "/Users/liumiao/chromedriver/2.20" # 指定driver路径，让系统选择合适的版本
+        caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/2.20/chromedriver"
 
         self.driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
         self.driver.implicitly_wait(15)
@@ -106,6 +112,53 @@ class TestXueqiu:
     def test_source(self):
         # 获取页面资源xml，可以验证xpath定位是否准确
         print(self.driver.page_source)
+
+    # 使用原生定位方式测试webview组件
+    def test_webview_native(self):
+        self.driver.find_element(MobileBy.XPATH, '//*[@text="交易" and contains(@resource-id, "tab")]').click()
+        self.driver.find_element(MobileBy.ACCESSIBILITY_ID, 'A股开户').click()
+        # self.driver.find_element(MobileBy.ID, 'phone-number').send_keys("18810143185")
+        phone = (MobileBy.ACCESSIBILITY_ID, '输入11位手机号')
+        WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable(phone))
+        self.driver.find_element(*phone).click()
+        print(self.driver.page_source)
+        print(self.driver.find_element(*phone).get_attribute("content-desc"))
+        # 使用原生定位时，send_keys失败
+        self.driver.find_element(*phone).send_keys("18810143185")
+
+    # 使用chrome调试模式定位，测试webview组件
+    def test_webview_debug(self):
+        # 下面代码表示：在原生页面点击交易进入webview页面
+        self.driver.find_element(MobileBy.XPATH, '//*[@text="交易" and contains(@resource-id, "tab")]').click()
+
+        # 测试webview时，用于分析当前的上下文
+        # for i in range(5):
+        #     print(self.driver.contexts)
+        #     sleep(1)
+        # print(self.driver.page_source)
+
+        # 下面代码表示：webview的上下文是否大于1，因为会有加载慢的时候，它就切换自己本身了，一般webview在第二个
+        WebDriverWait(self.driver, 20).until(lambda x: len(self.driver.contexts) > 1)
+        # 下面代码表示：切换到webview页面内部
+        self.driver.switch_to.context(self.driver.contexts[-1])
+        # print(self.driver.page_source)
+
+        # 测试webview时，用于分析当前的窗口句柄
+        # print(self.driver.window_handles)
+        # 下面代码表示：进入webview内部后，点击A股开户
+        self.driver.find_element(By.CSS_SELECTOR, '.trade_home_info_3aI').click()
+        # for i in range(5):
+        #     print(self.driver.window_handles)
+        #     sleep(1)
+
+        # 判断窗口句柄是否打开到了输入手机号的页面
+        WebDriverWait(self.driver, 20).until(lambda x: len(self.driver.window_handles) > 3)
+        # 下面代码表示：由于进入A股开户后，新增了多个窗口，切换到输入手机号的窗口
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+        # 等待手机号元素在dom中显示
+        phone = (By.ID, 'phone-number')
+        WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_all_elements_located(phone))
+        self.driver.find_element(*phone).send_keys("18810143184")
 
     def teardown(self):
         pass
