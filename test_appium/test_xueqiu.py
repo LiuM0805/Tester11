@@ -25,7 +25,7 @@ class TestXueqiu:
         # caps["autoGrantPermissions"] = True  # 忽略权限，但还是有权限访问，比如相机权限，不能和清理数据一起使用
         # caps["skipServerInstallation"] = True  # 跳过uiautomator2 server的安装
         # caps["chromedriverExecutableDir"] = "/Users/liumiao/chromedriver/2.20" # 指定driver路径，让系统选择合适的版本
-        caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/2.20/chromedriver"
+        caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/2.20/chromedriver"  # 指定driver文件，强制执行
 
         self.driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
         self.driver.implicitly_wait(15)
@@ -137,21 +137,22 @@ class TestXueqiu:
         #     sleep(1)
         # print(self.driver.page_source)
 
-        # 下面代码表示：webview的上下文是否大于1，因为会有加载慢的时候，它就切换自己本身了，一般webview在第二个
+        # 坑1：webview上下文的出现大概有3s延迟，所以加显示等待和表达式
         WebDriverWait(self.driver, 20).until(lambda x: len(self.driver.contexts) > 1)
-        # 下面代码表示：切换到webview页面内部
+        # 坑2：chromedriver的版本与Chrome版本必须对应
+        # 坑3：chromedriver出现无法对应版本的情况，需要使用caps的MappingFile或者Executable
         self.driver.switch_to.context(self.driver.contexts[-1])
         # print(self.driver.page_source)
 
         # 测试webview时，用于分析当前的窗口句柄
         # print(self.driver.window_handles)
-        # 下面代码表示：进入webview内部后，点击A股开户
+        # 坑4：学会使用chrome的inspect分析页面控件，需要翻墙，需要Chrome62版本
         self.driver.find_element(By.CSS_SELECTOR, '.trade_home_info_3aI').click()
         # for i in range(5):
         #     print(self.driver.window_handles)
         #     sleep(1)
 
-        # 判断窗口句柄是否打开到了输入手机号的页面
+        # 坑5：可能会出现多窗口，注意等待、判断、切换
         WebDriverWait(self.driver, 20).until(lambda x: len(self.driver.window_handles) > 3)
         # 下面代码表示：由于进入A股开户后，新增了多个窗口，切换到输入手机号的窗口
         self.driver.switch_to.window(self.driver.window_handles[-1])
