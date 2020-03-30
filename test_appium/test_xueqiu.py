@@ -167,25 +167,23 @@ class TestXueqiu:
         WebDriverWait(self.driver, 20).until(lambda x: len(self.driver.contexts) > 1)
         self.driver.switch_to.context(self.driver.contexts[-1])
         self.driver.find_element(By.CSS_SELECTOR, '.trade_home_xueying_SJY').click()
-        WebDriverWait(self.driver, 20).until(lambda x:len(self.driver.window_handles) > 3)
+        WebDriverWait(self.driver, 20).until(lambda x: len(self.driver.window_handles) > 3)
         self.driver.switch_to.window(self.driver.window_handles[-1])
-        phone=(By.XPATH, "//input[@placeholder='请输入手机号']")
-        code=(By.XPATH, "//input[@placeholder='请输入验证码']")
+        phone = (By.XPATH, "//input[@placeholder='请输入手机号']")
+        code = (By.XPATH, "//input[@placeholder='请输入验证码']")
         WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_all_elements_located(phone))
         self.driver.find_element(*phone).send_keys("18810143184")
         self.driver.find_element(*code).send_keys("1234")
-        button=(By.CSS_SELECTOR, '.open_form-submit_1Ms')
+        button = (By.CSS_SELECTOR, '.open_form-submit_1Ms')
         WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable(button))
         self.driver.find_element(*button).click()
-        WebDriverWait(self.driver, 20).until(lambda x:len(self.driver.contexts) > 1)
+        WebDriverWait(self.driver, 20).until(lambda x: len(self.driver.contexts) > 1)
         self.driver.switch_to.context(self.driver.contexts[0])
-        returned=(MobileBy.ID, "action_bar_back")
+        returned = (MobileBy.ID, "action_bar_back")
         # closed=(MobileBy.ID, '.action_bar_close')
         # WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable(closed))
         # self.driver.find_element(*closed).click()
         self.driver.find_element(*returned).click()
-
-
 
     def teardown(self):
         pass
