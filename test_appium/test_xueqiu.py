@@ -25,7 +25,7 @@ class TestXueqiu:
         # caps["autoGrantPermissions"] = True  # 忽略权限，但还是有权限访问，比如相机权限，不能和清理数据一起使用
         # caps["skipServerInstallation"] = True  # 跳过uiautomator2 server的安装
         # caps["chromedriverExecutableDir"] = "/Users/liumiao/chromedriver/2.20" # 指定driver路径，让系统选择合适的版本
-        caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/2.20/chromedriver"  # 指定driver文件，强制执行
+        caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/appium/2.20/chromedriver"  # 指定driver文件，强制执行
         # caps["avd"] = "Pixel_2_API_23" # 启动模拟器
 
         self.driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
