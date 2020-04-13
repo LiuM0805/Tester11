@@ -1,4 +1,8 @@
+import datetime
+
 from appium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+
 from test_appium.page.base_page import BasePage
 from test_appium.page.main import Main
 
@@ -14,11 +18,11 @@ class App(BasePage):
             caps["deviceName"] = "hogwarts"
             caps["appPackage"] = self._package
             caps["appActivity"] = self._activity
-            caps["noReset"] = True  # 是否清理数据
+            # caps["noReset"] = True  # 是否清理数据
             # caps["dontStopAppOnReset"] = True  # 不杀app进程
             caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/appium/2.20/chromedriver"
             self._driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
-            self._driver.implicitly_wait(15)
+            self._driver.implicitly_wait(5)
         else:
             self._driver.start_activity(self._package, self._activity)
         return self
@@ -30,4 +34,18 @@ class App(BasePage):
         pass
 
     def main(self):
+        def wait_load(driver):
+            print(datetime.datetime.now())
+            source = self._driver.page_source
+            if "我的" in source:
+                return True
+            if "同意" in source:
+                return True
+            if "image_cancel" in source:
+                return True
+            return False
+
+        WebDriverWait(self._driver, 20).until(wait_load)
+        # lambda表达式写法
+        # WebDriverWait(self._driver, 20).until(lambda x: "同意" in self._driver.page_source)
         return Main(self._driver)
