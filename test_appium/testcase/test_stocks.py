@@ -6,4 +6,7 @@ class TestStocks:
         self.stocks = App().start().main()
 
     def test_stocks(self):
-        self.stocks.goto_stocks().goto_search().search("jd").add_select().un_select()
+        assert "已添加" in self.stocks.goto_stocks().goto_search().search("jd").add_select().get_msg()
+        self.stocks.page_back()
+        assert "京东" in self.stocks.goto_stocks().stockname_select()
+

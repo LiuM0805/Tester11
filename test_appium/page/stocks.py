@@ -9,6 +9,5 @@ class Stocks(BasePage):
         self.find(By.ID, "action_search").click()
         return Search(self._driver)
 
-    def stocks_select(self):
-        self.find()
-
+    def stockname_select(self):
+        return self.find(By.ID, "portfolio_stockName").text

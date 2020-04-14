@@ -103,6 +103,9 @@ class BasePage:
     def find_by_text(self, key):
         return self.find(self.text(key))
 
+    def page_back(self):
+        return self._driver.back()
+
     def steps(self, path):
         with open(path) as f:
             steps: list[dict] = yaml.safe_load(f)
