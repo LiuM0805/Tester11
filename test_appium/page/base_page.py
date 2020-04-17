@@ -18,6 +18,8 @@ class BasePage:
     ]
     _error_max = 10
     _error_count = 0
+    # 接收外部传参给steps做参数替换用
+    _params = {}
 
     def __init__(self, driver: WebDriver = None):
         self._driver = driver
@@ -106,23 +108,44 @@ class BasePage:
     def page_back(self):
         return self._driver.back()
 
+    # 测试步骤的数据驱动函数方法：
     def steps(self, path):
+        # 首先打开某路径下文件给变量f
         with open(path) as f:
+            # 给steps声明list类型里面存放词典数据，并读取该文件
             steps: list[dict] = yaml.safe_load(f)
+            # element变量用appium的WebElement类型，并给个初始值None
             element: WebElement = None
+            # 让step循环读取yaml文件内容
             for step in steps:
-                logging.info(step)
+                # 判断by定位符是否存在
                 if "by" in step.keys():
+                    # 在的话，find这个定位符给element
                     element = self.find(step["by"], step["locator"])
+                # 在判断，action在不在
                 if "action" in step.keys():
+                    # 在的话，拿出值给action做后续判断
                     action = step["action"]
+                    # 拿出来的值判断是不是find，如果是的话默认就find所以pass即可
                     if action == "find":
                         pass
+                    # 否则如果是click的话
                     elif action == "click":
+                        # 点击element定位符，后面都同理
                         element.click()
                     elif action == "text":
                         element.text
+                        # TODO：这里不太明白
                     elif action == "attribute":
                         element.get_attribute(step["value"])
+                    # 否则如果是一些输入操作，那就牵扯到外部传参的数据替换问题
                     elif action in ["send_keys", "input", "send"]:
-                        element.send_keys(step["value"])
+                        # 先获取目前的yaml数据值
+                        content: str = step["value"]
+                        # 之后变量key从上边的词典里找外部传入的动态数据值
+                        for key in self._params.keys():
+                            # "{%s}"%key 这个key就是为了字符格式要求而在里面，打印结果就是{key}
+                            # self._params[key]是动态的数据，替换进去
+                            content = content.replace("{%s}" % key, self._params[key])
+                        # 之后把新的数据值进行输入操作
+                        element.send_keys(content)

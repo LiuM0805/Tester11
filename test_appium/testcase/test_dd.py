@@ -8,4 +8,5 @@ class TestDD:
         base.steps("../page/steps.yaml")
 
     def test_search(self):
-        App().start().main().goto_search_page().search("alibaba")
+        # 使用测试步骤的数据驱动执行case
+        App().start().main().goto_search_page().search("jd")

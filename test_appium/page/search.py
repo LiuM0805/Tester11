@@ -9,11 +9,12 @@ class Search(BasePage):
     _name_locator = (MobileBy.ID, "name")
 
     def search(self, key: str):
-        self.find(MobileBy.ID, "search_input_text").send_keys(key)
-        self.find(self._name_locator).click()
-        # dict = {}
-        # dict["key"] = key
-        # self.steps("../page/search.yaml")
+        # self.find(MobileBy.ID, "search_input_text").send_keys(key)
+        # self.find(self._name_locator).click()
+        # 调用basepage词典存入外部传入的数据
+        self._params = {}
+        self._params = {"key": key}
+        self.steps("../page/search.yaml")
         return self
 
     def get_price(self, key: str) -> float:

@@ -20,7 +20,8 @@ class App(BasePage):
             caps["appActivity"] = self._activity
             # caps["noReset"] = True  # 是否清理数据
             # caps["dontStopAppOnReset"] = True  # 不杀app进程
-            caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/appium/2.20/chromedriver"
+            # 测试webview时启动下面的代码
+            # caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/appium/2.20/chromedriver"
             self._driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
             self._driver.implicitly_wait(5)
         else:
