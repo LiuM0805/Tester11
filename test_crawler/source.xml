@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy rotation="0">
+    <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.xueqiu.android"
+          content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+          focused="false" scrollable="false" long-clickable="false" password="false" selected="false"
+          bounds="[0,0][2160,3840]">
+        <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.xueqiu.android"
+              content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+              focused="false" scrollable="false" long-clickable="false" password="false" selected="false"
+              bounds="[0,0][2160,3840]">
+            <node index="0" text="" resource-id="" class="android.widget.LinearLayout" package="com.xueqiu.android"
+                  content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+                  focused="false" scrollable="false" long-clickable="false" password="false" selected="false"
+                  bounds="[0,0][2160,3840]">
+                <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.xueqiu.android"
+                      content-desc="" checkable="false" checked="false" clickable="false" enabled="true"
+                      focusable="false" focused="false" scrollable="false" long-clickable="false" password="false"
+                      selected="false" bounds="[0,96][2160,3840]">
+                    <node index="0" text="" resource-id="com.xueqiu.android:id/decor_content_parent"
+                          class="android.view.ViewGroup" package="com.xueqiu.android" content-desc="" checkable="false"
+                          checked="false" clickable="false" enabled="true" focusable="false" focused="false"
+                          scrollable="false" long-clickable="false" password="false" selected="false"
+                          bounds="[0,96][2160,3840]">
+                        <node index="0" text="" resource-id="android:id/content" class="android.widget.FrameLayout"
+                              package="com.xueqiu.android" content-desc="" checkable="false" checked="false"
+                              clickable="false" enabled="true" focusable="false" focused="false" scrollable="false"
+                              long-clickable="false" password="false" selected="false" bounds="[0,96][2160,3840]">
+                            <node index="0" text="" resource-id="com.xueqiu.android:id/container"
+                                  class="android.widget.FrameLayout" package="com.xueqiu.android" content-desc=""
+                                  checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+                                  focused="false" scrollable="false" long-clickable="false" password="false"
+                                  selected="false" bounds="[0,96][2160,3840]">
+                                <node index="0" text="" resource-id="" class="android.widget.LinearLayout"
+                                      package="com.xueqiu.android" content-desc="" checkable="false" checked="false"
+                                      clickable="false" enabled="true" focusable="false" focused="false"
+                                      scrollable="false" long-clickable="false" password="false" selected="false"
+                                      bounds="[0,96][2160,3840]">
+                                    <node index="0" text="" resource-id="com.xueqiu.android:id/action_bar_container"
+                                          class="android.widget.RelativeLayout" package="com.xueqiu.android"
+                                          content-desc="" checkable="false" checked="false" clickable="false"
+                                          enabled="true" focusable="false" focused="false" scrollable="false"
+                                          long-clickable="false" password="false" selected="false"
+                                          bounds="[0,96][2160,288]">
+                                        <node NAF="true" index="0" text=""
+                                              resource-id="com.xueqiu.android:id/action_bar_back"
+                                              class="android.widget.ImageView" package="com.xueqiu.android"
+                                              content-desc="" checkable="false" checked="false" clickable="true"
+                                              enabled="true" focusable="false" focused="false" scrollable="false"
+                                              long-clickable="false" password="false" selected="false"
+                                              bounds="[0,96][224,288]"/>
+                                        <node NAF="true" index="1" text=""
+                                              resource-id="com.xueqiu.android:id/action_bar_close"
+                                              class="android.widget.ImageView" package="com.xueqiu.android"
+                                              content-desc="" checkable="false" checked="false" clickable="true"
+                                              enabled="true" focusable="false" focused="false" scrollable="false"
+                                              long-clickable="false" password="false" selected="false"
+                                              bounds="[288,124][424,260]"/>
+                                        <node index="2" text=""
+                                              resource-id="com.xueqiu.android:id/common_action_bar_line"
+                                              class="android.view.View" package="com.xueqiu.android" content-desc=""
+                                              checkable="false" checked="false" clickable="false" enabled="true"
+                                              focusable="false" focused="false" scrollable="false"
+                                              long-clickable="false" password="false" selected="false"
+                                              bounds="[0,287][2160,288]"/>
+                                        <node index="3" text="雪盈证券" resource-id="com.xueqiu.android:id/action_bar_title"
+                                              class="android.widget.TextView" package="com.xueqiu.android"
+                                              content-desc="" checkable="false" checked="false" clickable="false"
+                                              enabled="true" focusable="false" focused="false" scrollable="false"
+                                              long-clickable="false" password="false" selected="false"
+                                              bounds="[660,96][1500,288]"/>
+                                        <node NAF="true" index="4" text=""
+                                              resource-id="com.xueqiu.android:id/action_bar_right"
+                                              class="android.widget.LinearLayout" package="com.xueqiu.android"
+                                              content-desc="" checkable="false" checked="false" clickable="true"
+                                              enabled="true" focusable="false" focused="false" scrollable="false"
+                                              long-clickable="false" password="false" selected="false"
+                                              bounds="[1968,96][2160,288]">
+                                            <node index="0" text=""
+                                                  resource-id="com.xueqiu.android:id/common_action_bar_right_icon"
+                                                  class="android.widget.ImageView" package="com.xueqiu.android"
+                                                  content-desc="" checkable="false" checked="false" clickable="false"
+                                                  enabled="true" focusable="false" focused="false" scrollable="false"
+                                                  long-clickable="false" password="false" selected="false"
+                                                  bounds="[2016,144][2112,240]"/>
+                                        </node>
+                                    </node>
+                                    <node index="1" text="" resource-id="com.xueqiu.android:id/web_container"
+                                          class="android.widget.FrameLayout" package="com.xueqiu.android"
+                                          content-desc="" checkable="false" checked="false" clickable="false"
+                                          enabled="true" focusable="false" focused="false" scrollable="false"
+                                          long-clickable="false" password="false" selected="false"
+                                          bounds="[0,288][2160,3840]">
+                                        <node index="0" text="" resource-id="" class="android.widget.FrameLayout"
+                                              package="com.xueqiu.android" content-desc="" checkable="false"
+                                              checked="false" clickable="false" enabled="true" focusable="false"
+                                              focused="false" scrollable="false" long-clickable="false" password="false"
+                                              selected="false" bounds="[0,288][2160,3840]">
+                                            <node index="0" text="" resource-id="" class="android.webkit.WebView"
+                                                  package="com.xueqiu.android" content-desc="" checkable="false"
+                                                  checked="false" clickable="false" enabled="true" focusable="false"
+                                                  focused="false" scrollable="false" long-clickable="false"
+                                                  password="false" selected="false" bounds="[0,288][2160,3840]">
+                                                <node index="0" text="" resource-id="" class="android.webkit.WebView"
+                                                      package="com.xueqiu.android" content-desc="雪盈证券" checkable="false"
+                                                      checked="false" clickable="false" enabled="true" focusable="true"
+                                                      focused="true" scrollable="true" long-clickable="false"
+                                                      password="false" selected="false" bounds="[0,288][2160,3840]">
+                                                    <node index="0" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="" checkable="false"
+                                                          checked="false" clickable="false" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[0,288][2160,2268]">
+                                                        <node index="0" text="" resource-id=""
+                                                              class="android.widget.Image" package="com.xueqiu.android"
+                                                              content-desc="171336fbf00b8af3fdaf6044" checkable="false"
+                                                              checked="false" clickable="true" enabled="true"
+                                                              focusable="false" focused="false" scrollable="false"
+                                                              long-clickable="false" password="false" selected="false"
+                                                              bounds="[0,288][2160,2268]"/>
+                                                    </node>
+                                                    <node index="1" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="" checkable="false"
+                                                          checked="false" clickable="false" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[164,2628][1368,2868]">
+                                                        <node index="0" text="请输入手机号" resource-id=""
+                                                              class="android.widget.EditText"
+                                                              package="com.xueqiu.android" content-desc=""
+                                                              checkable="false" checked="false" clickable="true"
+                                                              enabled="true" focusable="true" focused="false"
+                                                              scrollable="false" long-clickable="false" password="false"
+                                                              selected="false" bounds="[164,2696][1368,2804]"/>
+                                                    </node>
+                                                    <node index="2" text="" resource-id="" class="android.widget.Button"
+                                                          package="com.xueqiu.android" content-desc="获取验证码"
+                                                          checkable="false" checked="false" clickable="true"
+                                                          enabled="true" focusable="true" focused="false"
+                                                          scrollable="false" long-clickable="false" password="false"
+                                                          selected="false" bounds="[1424,2508][1996,2988]"/>
+                                                    <node index="3" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="" checkable="false"
+                                                          checked="false" clickable="false" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[164,3036][1996,3276]">
+                                                        <node index="0" text="请输入验证码" resource-id=""
+                                                              class="android.widget.EditText"
+                                                              package="com.xueqiu.android" content-desc=""
+                                                              checkable="false" checked="false" clickable="true"
+                                                              enabled="true" focusable="true" focused="false"
+                                                              scrollable="false" long-clickable="false" password="false"
+                                                              selected="false" bounds="[164,3104][1996,3212]"/>
+                                                    </node>
+                                                    <node index="4" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="" checkable="false"
+                                                          checked="false" clickable="false" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[164,3324][1996,3592]">
+                                                        <node index="0" text="" resource-id=""
+                                                              class="android.widget.Button" package="com.xueqiu.android"
+                                                              content-desc="立即开户" checkable="false" checked="false"
+                                                              clickable="true" enabled="true" focusable="true"
+                                                              focused="false" scrollable="false" long-clickable="false"
+                                                              password="false" selected="false"
+                                                              bounds="[164,3324][1996,3592]"/>
+                                                    </node>
+                                                    <node index="5" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android"
+                                                          content-desc="登录注册即表示同意用户协议&amp;隐私协议" checkable="false"
+                                                          checked="false" clickable="true" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[84,3680][2076,3780]"/>
+                                                    <node index="6" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="" checkable="false"
+                                                          checked="false" clickable="false" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[0,3708][2160,3840]">
+                                                        <node index="0" text="" resource-id=""
+                                                              class="android.widget.Image" package="com.xueqiu.android"
+                                                              content-desc="171336fca96ba713fd29512b" checkable="false"
+                                                              checked="false" clickable="true" enabled="true"
+                                                              focusable="false" focused="false" scrollable="false"
+                                                              long-clickable="false" password="false" selected="false"
+                                                              bounds="[32,3708][2128,3840]"/>
+                                                    </node>
+                                                    <node index="7" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="咨询电话 ：400-118-8886"
+                                                          checkable="false" checked="false" clickable="true"
+                                                          enabled="true" focusable="false" focused="false"
+                                                          scrollable="false" long-clickable="false" password="false"
+                                                          selected="false" bounds="[0,0][0,0]"/>
+                                                    <node index="8" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android"
+                                                          content-desc="北京时间交易日9：00到次日05：00（只提供一般咨询)" checkable="false"
+                                                          checked="false" clickable="true" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[0,0][0,0]"/>
+                                                    <node index="9" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="" checkable="false"
+                                                          checked="false" clickable="false" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[0,0][0,0]">
+                                                        <node index="0" text="" resource-id="" class="android.view.View"
+                                                              package="com.xueqiu.android" content-desc="在线咨询"
+                                                              checkable="false" checked="false" clickable="true"
+                                                              enabled="true" focusable="false" focused="false"
+                                                              scrollable="false" long-clickable="false" password="false"
+                                                              selected="false" bounds="[0,0][0,0]"/>
+                                                    </node>
+                                                    <node index="10" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android"
+                                                          content-desc="投资有风险，入市需谨慎，从事证券投资或期货交易，请通过合法证券期货经营机构进行。"
+                                                          checkable="false" checked="false" clickable="true"
+                                                          enabled="true" focusable="false" focused="false"
+                                                          scrollable="false" long-clickable="false" password="false"
+                                                          selected="false" bounds="[0,0][0,0]"/>
+                                                    <node index="11" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android"
+                                                          content-desc="雪盈证券 ®，Snowball X ® 是 SNB Finance Holdings Limited 公司 (“SNB公司”) （商业号：9429046386212）的品牌名称和注册商标。SNB公司是根据新西兰法律成立并注册的金融服务供应商（注册号：594389），同时，SNB公司还是新西兰金融纠纷独立调解机制登记会员。作为雪球集团成员企业，SNB公司携雪盈证券通过强大的互联网科技和雄厚的金融实力，为全球华人提供包括港股、美股、中国A股在内的全球证券经纪服务。SNB公司注册地址：Level 5, 25 Teed Street, Newmarket, Auckland 1023, New Zealand."
+                                                          checkable="false" checked="false" clickable="true"
+                                                          enabled="true" focusable="false" focused="false"
+                                                          scrollable="false" long-clickable="false" password="false"
+                                                          selected="false" bounds="[0,0][0,0]"/>
+                                                    <node index="12" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android"
+                                                          content-desc="SNB公司未在新西兰以外的国家或地区的金融监管部门进行注册登记或经营业务，来自新西兰以外国家或地区的访客应当确认其行为是否满足当地法律法规要求，进而决定是否可以进一步使用雪盈证券相关服务。"
+                                                          checkable="false" checked="false" clickable="true"
+                                                          enabled="true" focusable="false" focused="false"
+                                                          scrollable="false" long-clickable="false" password="false"
+                                                          selected="false" bounds="[0,0][0,0]"/>
+                                                    <node index="13" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android"
+                                                          content-desc="本服务平台提供的行情价格及其他信息仅供您参考，该等资讯并非我们向您提供的投资推荐或购买及处置任何金融产品的建议。"
+                                                          checkable="false" checked="false" clickable="true"
+                                                          enabled="true" focusable="false" focused="false"
+                                                          scrollable="false" long-clickable="false" password="false"
+                                                          selected="false" bounds="[0,0][0,0]"/>
+                                                    <node index="14" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android"
+                                                          content-desc="投资证券或其他金融产品存在亏损风险，在使用雪盈证券提供的服务之前，请完整阅读我们的风险披露及条款声明。"
+                                                          checkable="false" checked="false" clickable="true"
+                                                          enabled="true" focusable="false" focused="false"
+                                                          scrollable="false" long-clickable="false" password="false"
+                                                          selected="false" bounds="[0,0][0,0]"/>
+                                                    <node index="15" text="" resource-id="" class="android.view.View"
+                                                          package="com.xueqiu.android" content-desc="" checkable="false"
+                                                          checked="false" clickable="false" enabled="true"
+                                                          focusable="false" focused="false" scrollable="false"
+                                                          long-clickable="false" password="false" selected="false"
+                                                          bounds="[0,0][0,0]">
+                                                        <node index="0" text="" resource-id="" class="android.view.View"
+                                                              package="com.xueqiu.android" content-desc="京ICP备18028914号"
+                                                              checkable="false" checked="false" clickable="true"
+                                                              enabled="true" focusable="true" focused="false"
+                                                              scrollable="false" long-clickable="false" password="false"
+                                                              selected="false" bounds="[0,0][0,0]"/>
+                                                    </node>
+                                                </node>
+                                            </node>
+                                        </node>
+                                    </node>
+                                </node>
+                            </node>
+                        </node>
+                    </node>
+                </node>
+            </node>
+            <node index="1" text="" resource-id="" class="android.widget.ImageView" package="com.xueqiu.android"
+                  content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+                  focused="false" scrollable="false" long-clickable="false" password="false" selected="false"
+                  bounds="[0,0][15,3840]"/>
+        </node>
+        <node index="1" text="" resource-id="android:id/statusBarBackground" class="android.view.View"
+              package="com.xueqiu.android" content-desc="" checkable="false" checked="false" clickable="false"
+              enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false"
+              password="false" selected="false" bounds="[0,0][2160,96]"/>
+    </node>
+</hierarchy>
