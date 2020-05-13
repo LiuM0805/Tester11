@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="7" hostname="liumiaodeMacBook-Pro.local" name="pytest" skipped="0" tests="17" time="0.169" timestamp="2020-02-12T13:44:22.382891"><testcase classname="unit.test_demo.TestDemo" file="unit/test_demo.py" line="9" name="test_demo" time="0.002"><failure message="AssertionError: False is not true">self = &lt;unit.test_demo.TestDemo testMethod=test_demo&gt;
+
+    def test_demo(self):
+&gt;       self.assertTrue(False)
+E       AssertionError: False is not true
+
+unit/test_demo.py:11: AssertionError</failure></testcase><testcase classname="unit.test_demo.TestDemo" file="unit/test_demo.py" line="4" name="test_sum" time="0.004"><system-out>3
+</system-out></testcase><testcase classname="unit.test_div" file="unit/test_div.py" line="5" name="test_div_int" time="0.001"></testcase><testcase classname="unit.test_div" file="unit/test_div.py" line="12" name="test_div_float" time="0.001"></testcase><testcase classname="unit.test_div" file="unit/test_div.py" line="19" name="test_div_exception" time="0.001"><failure message="assert 2.0 == -2
+ +  where 2.0 = div(-6, -3)">@pytest.mark.exception
+    def test_div_exception():
+&gt;       assert div(-6, -3) == -2
+E       assert 2.0 == -2
+E        +  where 2.0 = div(-6, -3)
+
+unit/test_div.py:22: AssertionError</failure></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="5" name="test_div_int_param[100000000-1-100000000]" time="0.002"></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="5" name="test_div_int_param[10-5-2]" time="0.005"></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="5" name="test_div_int_param[18-9-2]" time="0.003"></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="15" name="test_div_float_param[6.6-3.3-2]" time="0.002"></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="15" name="test_div_float_param[10.6-5.3-2]" time="0.003"></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="15" name="test_div_float_param[10.5-2-5.25]" time="0.005"></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="25" name="test_div_exception_param[10-a-10]" time="0.006"><failure message="TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;">number1 = 10, number2 = &apos;a&apos;, expection = 10
+
+    @pytest.mark.exception
+    @pytest.mark.parametrize(&quot;number1,number2,expection&quot;, {
+        (-6, -3, -2),
+        (&quot;a&quot;, &quot;b&quot;, 5),
+        (10, &quot;a&quot;, 10)
+    })
+    def test_div_exception_param(number1, number2, expection):
+&gt;       assert div(number1, number2) == expection
+
+unit/test_div_param.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = 10, b = &apos;a&apos;
+
+    def div(a, b):
+&gt;       return a / b
+E       TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;
+
+unit/div.py:2: TypeError</failure></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="25" name="test_div_exception_param[a-b-5]" time="0.004"><failure message="TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;str&apos;">number1 = &apos;a&apos;, number2 = &apos;b&apos;, expection = 5
+
+    @pytest.mark.exception
+    @pytest.mark.parametrize(&quot;number1,number2,expection&quot;, {
+        (-6, -3, -2),
+        (&quot;a&quot;, &quot;b&quot;, 5),
+        (10, &quot;a&quot;, 10)
+    })
+    def test_div_exception_param(number1, number2, expection):
+&gt;       assert div(number1, number2) == expection
+
+unit/test_div_param.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = &apos;a&apos;, b = &apos;b&apos;
+
+    def div(a, b):
+&gt;       return a / b
+E       TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;str&apos;
+
+unit/div.py:2: TypeError</failure></testcase><testcase classname="unit.test_div_param" file="unit/test_div_param.py" line="25" name="test_div_exception_param[-6--3--2]" time="0.004"><failure message="assert 2.0 == -2
+ +  where 2.0 = div(-6, -3)">number1 = -6, number2 = -3, expection = -2
+
+    @pytest.mark.exception
+    @pytest.mark.parametrize(&quot;number1,number2,expection&quot;, {
+        (-6, -3, -2),
+        (&quot;a&quot;, &quot;b&quot;, 5),
+        (10, &quot;a&quot;, 10)
+    })
+    def test_div_exception_param(number1, number2, expection):
+&gt;       assert div(number1, number2) == expection
+E       assert 2.0 == -2
+E        +  where 2.0 = div(-6, -3)
+
+unit/test_div_param.py:33: AssertionError</failure></testcase><testcase classname="unit.test_pytest" file="unit/test_pytest.py" line="4" name="test_answer" time="0.002"><failure message="assert 4 == 5
+ +  where 4 = inc(3)">def test_answer():
+&gt;       assert inc(3) == 5
+E       assert 4 == 5
+E        +  where 4 = inc(3)
+
+unit/test_pytest.py:6: AssertionError</failure></testcase><testcase classname="unit.test_pytest.TestClass" file="unit/test_pytest.py" line="9" name="test_one" time="0.001"></testcase><testcase classname="unit.test_pytest.TestClass" file="unit/test_pytest.py" line="13" name="test_two" time="0.001"><failure message="AssertionError: assert False
+ +  where False = hasattr(&apos;hello&apos;, &apos;check&apos;)">self = &lt;unit.test_pytest.TestClass object at 0x102a6d250&gt;
+
+    def test_two(self):
+        x = &quot;hello&quot;
+&gt;       assert hasattr(x, &quot;check&quot;)
+E       AssertionError: assert False
+E        +  where False = hasattr(&apos;hello&apos;, &apos;check&apos;)
+
+unit/test_pytest.py:16: AssertionError</failure></testcase></testsuite></testsuites>

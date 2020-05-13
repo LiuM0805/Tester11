@@ -26,9 +26,9 @@ class App(BasePage):
             # caps["dontStopAppOnReset"] = True  # 不杀app进程
             # 测试webview时启动下面的代码
             # caps["chromedriverExecutable"] = "/Users/liumiao/chromedriver/appium/2.20/chromedriver"
-            # self._driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
+            self._driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
             # Grid模式
-            self._driver = webdriver.Remote("http://localhost:4444/wd/hub", caps)
+            # self._driver = webdriver.Remote("http://localhost:4444/wd/hub", caps)
             self._driver.implicitly_wait(5)
         else:
             self._driver.start_activity(self._package, self._activity)
