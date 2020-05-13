@@ -24,7 +24,7 @@ def session_handle():
 
 
 """
-运行上面的代码，打开terminal，输入下面内容
+打开terminal，输入下面内容
 export FLASK_APP=你的文件名
 flask run
 """
