@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class Test_Testerhome:
+class TestTesterhome:
     def setup_method(self):
         browser = os.getenv("browser", "").lower()
         print(browser)
@@ -34,8 +34,8 @@ class Test_Testerhome:
     def test_testerhome(self):
         self.driver.find_element(By.LINK_TEXT, '社团').click()
         # sleep(2)
-        # element = (By.CSS_SELECTOR, "[data-name='霍格沃兹测试学院']")
-        element = (By.PARTIAL_LINK_TEXT, '霍格沃兹测试学院')
+        element = (By.CSS_SELECTOR, '[data-name=霍格沃兹测试学院]')
+        # element = (By.PARTIAL_LINK_TEXT, '霍格沃兹测试学院')
         self.wait(10, expected_conditions.element_to_be_clickable(element))
         self.driver.find_element(*element).click()
         # self.driver.find_element(By.CSS_SELECTOR, '[data-name=霍格沃兹测试学院]').click()
