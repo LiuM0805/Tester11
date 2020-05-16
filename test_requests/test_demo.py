@@ -1,6 +1,8 @@
+import json
 from pprint import pprint
 
 import requests
+from jsonpath import jsonpath
 from requests import Session, Response
 
 proxies = {
@@ -85,3 +87,14 @@ def test_get_hook():
     print(r.json())
     print(r.demo)
     assert r.status_code == 200
+
+
+def test_jsonpath():
+    r = requests.get("https://home.testing-studio.com/categories.json")
+    # print(json.dumps(json.loads(r.text), indent=2, ensure_ascii=False))
+    # assert r.json()["category_list"]["categories"][0]["id"] == 16
+    # 根据jsonpath语法进行定位断言
+    print(jsonpath(r.json(), '$..categories[?(@.name=="开源项目")]')[0]["description"])
+    assert jsonpath(r.json(), '$..categories[?(@.name=="开源项目")]')[0]["description"] == "开源项目交流与维护"
+
+
