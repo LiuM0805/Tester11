@@ -56,7 +56,7 @@ def test_upload():
     r = requests.post(
         url,
         files={"file": open("__init__.py", "rb")},
-        proxies=proxies,
+        # proxies=proxies,
         verify=False
         # headers={"Content-Type": "application/plain"},
         # cookies={"name": "liumiao"}
@@ -96,5 +96,3 @@ def test_jsonpath():
     # 根据jsonpath语法进行定位断言
     print(jsonpath(r.json(), '$..categories[?(@.name=="开源项目")]')[0]["description"])
     assert jsonpath(r.json(), '$..categories[?(@.name=="开源项目")]')[0]["description"] == "开源项目交流与维护"
-
-
