@@ -43,12 +43,14 @@ class Department(BaseApi):
         return r.json()
 
     # 创建部门
-    def create_depart(self, name, departid=1):
+    def create_depart(self, name, departid=1, **kwargs):
+        data = {"name": name, "parentid": departid}
+        data.update(**kwargs)
         create_url = "https://qyapi.weixin.qq.com/cgi-bin/department/create"
         r = requests.post(
             create_url,
             params={"access_token": self.get_token()},
-            json={"name": name, "parentid": departid}
+            json=data
         )
         self._json_format(jq=r)
         return r.json()
