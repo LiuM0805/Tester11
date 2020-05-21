@@ -1,5 +1,6 @@
 import json
 
+import yaml
 from jsonpath import jsonpath
 
 
@@ -13,3 +14,8 @@ class BaseApi:
         if r is None:
             r = self.r.json()
         return jsonpath(r, path)
+
+    @classmethod
+    def yaml_load(cls, path) -> list:
+        with open(path) as f:
+            return yaml.safe_load(f)
