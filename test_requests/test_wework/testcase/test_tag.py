@@ -1,7 +1,12 @@
+import pytest
+
+from test_requests.test_wework.api.baseapi import BaseApi
 from test_requests.test_wework.api.tag import Tag
 
 
 class TestTag:
+    data = BaseApi.yaml_load("test_tag.data.yaml")
+
     @classmethod
     def setup_class(cls):
         cls.tag = Tag()
@@ -17,10 +22,12 @@ class TestTag:
         r = self.tag.add("demo2")
         assert r["errcode"] == 0
 
-    def test_delete(self):
-        name = "demo2"
-
-        # 如果demo2存在，就删除
+    # @pytest.mark.parametrize("name", [
+    #     "demo1", "demo2", "中文", "😈_嘿嘿", " "
+    # ])
+    @pytest.mark.parametrize("name", data["test_delete"])
+    def test_delete(self, name):
+        # 如果name存在，就删除
         self.tag.get()
         x = self.tag.jsonpath(f"$..tag[?(@.name=='{name}')]")
         print(x)
