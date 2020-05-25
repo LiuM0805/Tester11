@@ -1,0 +1,24 @@
+"test_delete":
+  - {method: get}
+  - {extract: "$..tag[?(@.name=='{name}')]", name: xxx}
+  - {method: delete, conditions: xxx}
+  - {method: get}
+  - {extract: path1, name: size}
+  - {method: add}
+  - {method: get}
+  - {extract: path3, name:size}
+  - {assertion: xxx}
+
+"test_delete2":
+  - method: get
+    url: "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list"
+    query: {a: 1}
+    json: {b: 2}
+  - {extract: "$..tag[?(@.name=='{name}')]", name: xxx}
+  - {method: delete, conditions: xxx}
+  - {method: get}
+  - {extract: path1, name: size}
+  - {method: add}
+  - {method: get}
+  - {extract: path3, name:size}
+  - {assertion: xxx}
