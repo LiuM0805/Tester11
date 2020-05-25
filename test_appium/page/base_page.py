@@ -144,7 +144,7 @@ class BasePage:
                         content: str = step["value"]
                         # 之后变量key从上边的词典里找外部传入的动态数据值
                         for key in self._params.keys():
-                            # "{%s}"%key 这个key就是为了字符格式要求而在里面，打印结果就是{key}
+                            # "{%s}"%key 这个key是你step读取出来yaml文件里面的值
                             # self._params[key]是动态的数据，替换进去
                             content = content.replace("{%s}" % key, self._params[key])
                         # 之后把新的数据值进行输入操作
