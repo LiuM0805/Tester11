@@ -9,7 +9,7 @@ class Tag(WeWork):
     def __init__(self):
         self.data = self.api_load("../api/tag.api.yaml")
 
-    def get_api(self):
+    def get_api(self, **kwargs):
         return self.api_send(self.data["get"])
 
     # def get(self):

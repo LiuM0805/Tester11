@@ -1,13 +1,13 @@
 "test_delete":
-  - {method: get}
-  - {extract: "$..tag[?(@.name=='{name}')]", name: xxx}
-  - {method: delete, conditions: xxx}
-  - {method: get}
-  - {extract: path1, name: size}
-  - {method: add}
-  - {method: get}
-  - {extract: path3, name:size}
-  - {assertion: xxx}
+  - {method: tag.get_api}
+  - {path: "$..tag[?(@.name==${name})]", extract: before}
+#  - {method: tag.delete_api, conditions: xxx}
+#  - {method: tag.get_api}
+#  - {extract: path1, name: size}
+  - {method: tag.add_api, name: "${name}"}
+  - {method: tag.get_api}
+  - {path: "$..tag[?(@.name==${name})]", extract: after}
+  - {assertion: len(after)>len(before)}
 
 "test_delete2":
   - method: get

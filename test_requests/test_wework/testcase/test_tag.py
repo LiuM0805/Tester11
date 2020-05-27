@@ -7,6 +7,7 @@ from test_requests.test_wework.api.tag import Tag
 class TestTag:
     # 读取yaml文件
     data = BaseApi.yaml_load("test_tag.data.yaml")
+    steps = BaseApi.yaml_load("test_tag.step.yaml")
 
     @classmethod
     def setup_class(cls):
@@ -22,7 +23,6 @@ class TestTag:
     #     print(self.tag.jsonpath("$..tag[?(@.name!='')]"))
     #     print(self.tag.jsonpath("$..tag"))
 
-
     def test_add_api(self):
         r = self.tag.add_api("demo2")
         assert r["errcode"] == 0
@@ -31,6 +31,12 @@ class TestTag:
     #     r = self.tag.add("demo2")
     #     assert r["errcode"] == 0
 
+    @pytest.mark.parametrize("name", [
+        "demo1"
+    ])
+    def test_delete_step(self, name):
+        self.tag.params = {"name": name}
+        self.tag.steps_run(self.steps["test_delete"])
 
     @pytest.mark.parametrize("name", data["test_delete"])
     def test_delete_api(self, name):
