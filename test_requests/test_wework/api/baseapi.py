@@ -60,7 +60,6 @@ class BaseApi:
                     self.data[step["extract"]] = getattr(self, "jsonpath")(**step)
                     print(self.data[step["extract"]])
 
-
         # req["params"]["access_token"] = self.get_token(self.secret)
         # raw = yaml.dump(req)
         # for key, value in self.params.items():
