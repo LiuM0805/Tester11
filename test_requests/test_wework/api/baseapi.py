@@ -27,6 +27,13 @@ class BaseApi:
     def api_load(self, path):
         return self.yaml_load(path)
 
+    # 接口加解密
+    def encode_base64(self):
+        pass
+
+    def decode_base64(self):
+        pass
+
     def api_send(self, req: dict):
         req["params"]["access_token"] = self.get_token(self.secret)
         raw = yaml.dump(req)
