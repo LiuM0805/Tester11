@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Tester11.iml" filepath="$PROJECT_DIR$/.idea/Tester11.iml" />
+      <module fileurl="file://$USER_HOME$/httprunner/hogwarts-demo/.idea/hogwarts-demo.iml" filepath="$USER_HOME$/httprunner/hogwarts-demo/.idea/hogwarts-demo.iml" />
     </modules>
   </component>
 </project>
