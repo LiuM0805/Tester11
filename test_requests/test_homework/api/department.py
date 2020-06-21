@@ -55,7 +55,7 @@ class Department(BaseApi):
         self._json_format(jq=r)
         return r.json()
 
-    # 更能部门
+    # 更新部门
     def update_depart(self, id, **kwargs):
         data = {"id": id}
         data.update(**kwargs)
