@@ -6,7 +6,13 @@ from selenium.webdriver.common.keys import Keys
 
 class TestDefaultSuite():
     def setup_method(self, method):
-        self.driver = webdriver.Chrome()
+        # 如果集成到Jenkins需要无界面化，就用下面代码
+        option = webdriver.ChromeOptions()
+        option.add_argument("--headless")
+        self.driver = webdriver.Chrome(options=option)
+
+        # 普通启动chrome浏览器用下面代码
+        # self.driver = webdriver.Chrome()
         self.vars = {}
 
     def teardown_method(self, method):
