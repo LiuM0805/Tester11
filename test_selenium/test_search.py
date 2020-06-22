@@ -7,6 +7,7 @@ from selenium.webdriver.common.keys import Keys
 class TestDefaultSuite():
     def setup_method(self, method):
         # 如果集成到Jenkins需要无界面化，就用下面代码
+        print("使用无界面方式运行测试")
         option = webdriver.ChromeOptions()
         option.add_argument("--headless")
         self.driver = webdriver.Chrome(options=option)
@@ -19,8 +20,10 @@ class TestDefaultSuite():
         self.driver.quit()
 
     def test_testsearch(self):
+        print("打开浏览器，访问TesterHome")
         self.driver.get("https://testerhome.com/")
         self.driver.set_window_size(1200, 761)
         self.driver.find_element(By.NAME, "q").click()
+        print("搜索关键词：appium")
         self.driver.find_element(By.NAME, "q").send_keys("appium")
         self.driver.find_element(By.NAME, "q").send_keys(Keys.ENTER)
